@@ -79,7 +79,7 @@ interface Edge {
       const committedDate = edge?.node?.committedDate;
       const timeString = new Date(committedDate).toLocaleTimeString('en-US', {
         hour12: false,
-        timeZone: process.env.TIMEZONE,
+        timeZone: process.env.TIMEZONE || undefined,
       });
       const hour = +timeString.split(':')[0];
 
